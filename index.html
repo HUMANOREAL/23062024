@@ -46,12 +46,13 @@
         .heart-image {
             width: 300px; /* Tamanho da imagem */
             height: 300px; /* Tamanho da imagem */
-            background-image: url('fotos/a_gente.jpg'); /* Caminho para a foto */
+            background-image: url('foto/a_gente.jpg'); /* Caminho para a foto */
             background-size: cover;
             background-position: center;
-            clip-path: polygon(
-                50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%
-            );
+            clip-path: path('M 150 0 
+                             C 225 -50 300 50 150 150 
+                             C 0 50 75 -50 150 0 
+                             Z');
         }
     </style>
 </head>
