@@ -38,10 +38,21 @@
                 opacity: 0;
             }
         }
+        .heart-image {
+            width: 300px; /* Tamanho da imagem */
+            height: 300px; /* Tamanho da imagem */
+            background-image: url('fotos/a_gente.jpg'); /* Caminho para a foto */
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(
+                50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%
+            );
+        }
     </style>
 </head>
 <body>
     <div id="hearts-container"></div>
+    <div class="heart-image"></div>
     <script>
         const heartsContainer = document.getElementById('hearts-container');
 
