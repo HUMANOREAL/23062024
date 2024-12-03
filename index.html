@@ -43,16 +43,18 @@
                 opacity: 0;
             }
         }
-        .heart-image {
-            width: 300px; /* Tamanho da imagem */
-            height: 300px; /* Tamanho da imagem */
-            background-image: url('fotos/a_gente.jpg'); /* Caminho para a foto */
-            background-size: cover;
-            background-position: center;
-            clip-path: path('M 150 0 
-                             C 225 -50 300 50 150 150 
-                             C 0 50 75 -50 150 0 
-                             Z');
+         .heart-image {
+            width: 300px; /* Tamanho da largura da imagem */
+            height: 300px; /* Tamanho da altura da imagem */
+            background-image: url('fotos/a_gente.jpg'); /* Caminho para a sua foto */
+            background-size: cover; /* Faz a imagem cobrir o espaço inteiro */
+            background-position: center; /* Centraliza a imagem */
+            clip-path: polygon(
+                50% 0%, 61% 3%, 71% 12%, 77% 22%, 
+                80% 35%, 79% 50%, 75% 61%, 67% 75%, 
+                50% 100%, 33% 75%, 25% 61%, 21% 50%, 
+                20% 35%, 23% 22%, 29% 12%, 39% 3%
+            ); /* Forma de coração */
         }
     </style>
 </head>
