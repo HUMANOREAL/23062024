@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>23/06/2024</title>
+    <title>23-06-24</title>
     <style>
         body {
             margin: 0;
@@ -24,10 +24,7 @@
 
         .heart {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff4d6d;
-            clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%);
+            font-size: 20px;
             animation: float 4s linear infinite;
         }
 
@@ -51,7 +48,9 @@
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
+            heart.textContent = '❤️'; // Usando o emoji de coração
             heart.style.left = Math.random() * 100 + 'vw'; // Posição horizontal aleatória
+            heart.style.fontSize = Math.random() * 20 + 20 + 'px'; // Tamanho aleatório
             heart.style.animationDuration = Math.random() * 2 + 3 + 's'; // Duração da animação aleatória
             heartsContainer.appendChild(heart);
 
