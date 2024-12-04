@@ -17,7 +17,7 @@
             margin: 0;
             overflow: hidden;
             height: 100vh;
-            background-color: #2a3439;
+            background-color: black;
             color: white;
             display: flex;
             justify-content: center;
@@ -136,7 +136,7 @@
         setInterval(createHeart, 300);
 
             // Definindo a data final para 6 de dezembro às 23:59
-    const targetDate = new Date('2024-12-06T23:59:00'); // Definir para 6 de dezembro às 23:59
+    const targetDate = new Date(2024, 11, 6, 23, 59, 0); // 6 de dezembro de 2024 às 23:59
 
     // Função que atualiza o cronômetro
     function updateTimer() {
@@ -160,11 +160,6 @@
 
     // Atualiza o cronômetro a cada segundo
     const timerInterval = setInterval(updateTimer, 1000);
-
-    // Exibe o conteúdo romântico no final
-    document.getElementById('showMainBtn').addEventListener('click', function() {
-        alert('Bem-vindo ao conteúdo romântico! 💕');
-    });
     </script>
 </body>
 </html>
