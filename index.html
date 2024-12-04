@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
     <title>23-06-24</title>
     <style>
         *::selection {
@@ -11,10 +12,13 @@
         }
 
         body {
+            font-family: 'Dancing Script', cursive;
+            height: 100vh;
             margin: 0;
             overflow: hidden;
             height: 100vh;
-            background-color: black;
+            background-color: #2a3439;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,11 +56,64 @@
             mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 80s30-15 30-35C80 20 60 0 50 20 40 0 20 20 20 45c0 20 30 35 30 35z" fill="white" /%3E%3C/svg%3E'); /* Máscara em formato de coração */
             -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 80s30-15 30-35C80 20 60 0 50 20 40 0 20 20 20 45c0 20 30 35 30 35z" fill="white" /%3E%3C/svg%3E'); /* Para navegadores baseados em WebKit */
         }
+
+                .container {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #f3b6d4, #f9c0cb);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer {
+            font-size: 50px;
+            color: #e74c3c;
+            font-family: 'Pacifico', cursive;
+            margin: 20px;
+        }
+
+        main {
+            display: none;
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+
+        /* Efeito no botão */
+        .button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+    <div id="timer" class="timer">00:00</div>
+    <button class="button" id="showMainBtn" style="display: none;">Veja o conteúdo romântico!</button>
+</div>
+    
     <div id="hearts-container"></div>
+    
+    <main>
+        
     <div class="heart-image"></div>
+        
+    </mai>
     <script>
         const heartsContainer = document.getElementById('hearts-container');
 
@@ -77,6 +134,37 @@
 
         // Criar corações a cada 300ms
         setInterval(createHeart, 300);
+
+            // Definindo a data final para 6 de dezembro às 23:59
+    const targetDate = new Date('2024-12-06T23:59:00'); // Definir para 6 de dezembro às 23:59
+
+    // Função que atualiza o cronômetro
+    function updateTimer() {
+        const now = new Date();
+        const timeRemaining = targetDate - now; // Calcula o tempo restante
+
+        if (timeRemaining <= 0) {
+            document.querySelector('main').style.display = 'block'; // Exibe o conteúdo
+            document.getElementById('showMainBtn').style.display = 'block'; // Exibe o botão
+            clearInterval(timerInterval); // Para o cronômetro
+            return;
+        }
+
+        // Calcula os minutos e segundos restantes
+        const minutes = Math.floor(timeRemaining / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Atualiza o cronômetro na página
+        document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    // Atualiza o cronômetro a cada segundo
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    // Exibe o conteúdo romântico no final
+    document.getElementById('showMainBtn').addEventListener('click', function() {
+        alert('Bem-vindo ao conteúdo romântico! 💕');
+    });
     </script>
 </body>
 </html>
