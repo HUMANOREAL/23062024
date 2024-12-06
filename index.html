@@ -141,15 +141,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
-    <div id="timer" class="timer">00:00</div>
-    <button class="button" id="showMainBtn" style="display: none;">Veja o conteúdo romântico!</button>
-</div>
-    
     <div id="hearts-container"></div>
     
-    <main>
-        
+    <main> 
     <div class="heart-image"></div>
     <header>
     <h1>23-06-24</h1>
@@ -187,32 +181,6 @@
 
         // Criar corações a cada 300ms
         setInterval(createHeart, 300);
-
-            // Definindo a data final para 6 de dezembro às 23:59
-    const targetDate = new Date(2024, 11, 6, 23, 59, 0); // 6 de dezembro de 2024 às 23:59
-
-    // Função que atualiza o cronômetro
-    function updateTimer() {
-        const now = new Date();
-        const timeRemaining = targetDate - now; // Calcula o tempo restante
-
-        if (timeRemaining <= 0) {
-            document.querySelector('main').style.display = 'block'; // Exibe o conteúdo
-            document.getElementById('showMainBtn').style.display = 'block'; // Exibe o botão
-            clearInterval(timerInterval); // Para o cronômetro
-            return;
-        }
-
-        // Calcula os minutos e segundos restantes
-        const minutes = Math.floor(timeRemaining / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-        // Atualiza o cronômetro na página
-        document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    }
-
-    // Atualiza o cronômetro a cada segundo
-    const timerInterval = setInterval(updateTimer, 1000);
     </script>
 </body>
 </html>
