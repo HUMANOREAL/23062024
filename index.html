@@ -123,9 +123,17 @@
         .button:hover {
             background-color: #c0392b;
         }
+            audio {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Adicionando o player de áudio -->
+    <audio id="background-music" autoplay loop volume="0.25">
+        <source src="ludo.mp3" type="audio/mp3">
+    </audio>
+    
     <div id="hearts-container"></div>
 
     <div class="container">
