@@ -123,15 +123,18 @@
         .button:hover {
             background-color: #c0392b;
         }
-            audio {
+
+        /* O player de áudio será invisível */
+        audio {
             display: none;
         }
     </style>
 </head>
 <body>
     <!-- Adicionando o player de áudio -->
-    <audio id="background-music" autoplay loop volume="0.25">
+    <audio id="background-music" autoplay loop>
         <source src="ludo.mp3" type="audio/mp3">
+        Seu navegador não suporta áudio.
     </audio>
     
     <div id="hearts-container"></div>
@@ -157,6 +160,11 @@
     </footer>
 
     <script>
+        // Ajustando o volume do áudio via JavaScript
+        const audioPlayer = document.getElementById('background-music');
+        audioPlayer.volume = 0.25; // Ajustando o volume para 25%
+
+        // Script dos corações
         const heartsContainer = document.getElementById('hearts-container');
 
         function createHeart() {
