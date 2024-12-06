@@ -15,13 +15,14 @@
             font-family: 'Dancing Script', cursive;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
-            height: 100vh;
-            background-color: black;
-            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            background-color: #2c3e50;
+            color: white;
+            overflow: hidden;
+            text-align: center;
         }
 
         #hearts-container {
@@ -47,9 +48,10 @@
                 opacity: 0;
             }
         }
-.heart-image {
-            width: 300px; /* Largura da imagem */
-            height: 300px; /* Altura da imagem */
+
+        .heart-image {
+            width: 250px; /* Largura da imagem */
+            height: 250px; /* Altura da imagem */
             background-image: url('fotos/a_gente.jpg'); /* Caminho para a sua foto */
             background-size: cover; /* A imagem cobrirá todo o espaço */
             background-position: center; /* A imagem será centralizada */
@@ -57,33 +59,53 @@
             -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 80s30-15 30-35C80 20 60 0 50 20 40 0 20 20 20 45c0 20 30 35 30 35z" fill="white" /%3E%3C/svg%3E'); /* Para navegadores baseados em WebKit */
         }
 
-                .container {
-            text-align: center;
-            padding: 20px;
+        .container {
+            width: 100%;
+            max-width: 500px;
             background: linear-gradient(45deg, #f3b6d4, #f9c0cb);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+            z-index: 2;
+            position: relative;
         }
 
-        .timer {
-            font-size: 50px;
-            color: #e74c3c;
-            font-family: 'Pacifico', cursive;
-            margin: 20px;
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #c84c6f;
+            margin: 0;
         }
 
-        main {
-            font-size: 18px;
+        .content {
+            background: #fff9f3;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            font-size: 1.2rem;
             color: #2c3e50;
-            margin-top: 20px;
+            line-height: 1.8;
         }
 
-        /* Efeito no botão */
+        .content::before {
+            content: '💌';
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #856b63;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
         .button {
             background-color: #e74c3c;
             color: white;
@@ -93,73 +115,37 @@
             border-radius: 25px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-top: 20px;
         }
 
         .button:hover {
             background-color: #c0392b;
         }
-        header {
-      background-color: #f9dada;
-      text-align: center;
-      padding: 20px;
-      border-bottom: 2px solid #e8c7c7;
-    }
-
-    header h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
-      color: #c84c6f;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #fff9f3;
-      padding: 20px;
-      border: 1px solid #f0e2d8;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .content::before {
-      content: '💌';
-      font-size: 2rem;
-      display: block;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #856b63;
-    }
     </style>
 </head>
 <body>
     <div id="hearts-container"></div>
-    
-    <main> 
-    <div class="heart-image"></div>
-    <header>
-    <h1>23-06-24</h1>
-  </header>
 
-  <div class="content">
-    <h3>Olá momo,</h3>
-    <p>
-      ainda to escrevendo então não fica chateada comigo...
-    </p>
-    <a href="#" class="button">Leia Mais</a>
-  </div>
-        
-    </mai>
-        <footer>
-    &copy; 06/12/2024 - Feito com 💕 por Gui para Isa 
-          </footer>
+    <div class="container">
+        <header>
+            <h1>23-06-24</h1>
+        </header>
+
+        <div class="heart-image"></div>
+
+        <div class="content">
+            <h3>Olá momo,</h3>
+            <p>
+                Ainda estou escrevendo, então não fica chateada comigo...
+            </p>
+            <a href="#" class="button">Leia Mais</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 06/12/2024 - Feito com 💕 por Gui para Isa
+    </footer>
+
     <script>
         const heartsContainer = document.getElementById('hearts-container');
 
