@@ -99,6 +99,45 @@
         .button:hover {
             background-color: #c0392b;
         }
+        header {
+      background-color: #f9dada;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid #e8c7c7;
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #c84c6f;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff9f3;
+      padding: 20px;
+      border: 1px solid #f0e2d8;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .content::before {
+      content: '💌';
+      font-size: 2rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #856b63;
+    }
     </style>
 </head>
 <body>
@@ -112,8 +151,22 @@
     <main>
         
     <div class="heart-image"></div>
+    <header>
+    <h1>23-06-24</h1>
+  </header>
+
+  <div class="content">
+    <p>Olá momo,</p>
+    <p>
+      (texto aqui)
+    <p>(vinalização)</p>
+    <a href="#" class="button">Leia Mais</a>
+  </div>
         
     </mai>
+        <footer>
+    &copy; 06/12/2024 - Feito com 💕 por Gui para Isa 
+          </footer>
     <script>
         const heartsContainer = document.getElementById('hearts-container');
 
